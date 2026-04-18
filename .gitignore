@@ -1,0 +1,10 @@
+CONTEXT.md
+ROADMAP.md
+QnA.md
+.venv
+__pycache__/
+.venv/
+*.pyc
+pgdata/
+.pytest_cache/ 
+.env
