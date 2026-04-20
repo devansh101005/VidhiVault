@@ -8,3 +8,4 @@ __pycache__/
 pgdata/
 .pytest_cache/ 
 .env
+/uploads
