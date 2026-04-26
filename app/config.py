@@ -14,8 +14,13 @@ class Settings(BaseSettings):
     # Optional API key (can be empty for now)
     groq_api_key: Optional[str] = None
 
+    groq_model: str = "llama-3.3-70b-versatile"
     # Default embedding model
     embedding_model: str = "all-MiniLM-L6-v2"
+
+
+
+
 
     class Config:
         # Tells Pydantic where to read environment variables from

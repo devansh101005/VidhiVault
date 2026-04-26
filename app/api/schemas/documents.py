@@ -1,11 +1,9 @@
-# app/api/schemas/documents.py
-
 from datetime import datetime
 from uuid import UUID
 from typing import Optional
 
 from pydantic import BaseModel, ConfigDict
-
+from app.workers.tasks import process_document
 
 #response after doc upload
 class DocumentUploadResponse(BaseModel):

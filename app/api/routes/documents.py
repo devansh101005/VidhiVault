@@ -9,6 +9,7 @@ from sqlalchemy import select
 from app.db.session import get_db
 from app.db.models import Document
 from app.api.schemas.documents import DocumentUploadResponse
+from app.workers.tasks import process_document
 
 
 router = APIRouter(prefix="/documents", tags=["documents"])
@@ -72,6 +73,8 @@ async def upload_document(
     db.add(doc)
     await db.commit()
     await db.refresh(doc)
+
+    process_document.delay(str(doc.id))
 
     
     # Return response

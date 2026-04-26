@@ -103,6 +103,7 @@ class Chunk(Base):
 
     chunk_type: Mapped[str] = mapped_column(
         String,
+        default="text",
         server_default="text",
         nullable=False,
     )
